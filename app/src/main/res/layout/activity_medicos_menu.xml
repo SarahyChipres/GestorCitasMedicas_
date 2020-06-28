@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MedicosMenu">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="269dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="148dp"
+        android:onClick="ConsultarCitas"
+        android:text="Pacientes del dia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="269dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="92dp"
+        android:onClick="CancelarCitas"
+        android:text="cancelar cita"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="269dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="432dp"
+        android:onClick="MedicosFechas"
+        android:text="Elegir Fechas Disponibles"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button22"
+        android:layout_width="269dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="376dp"
+        android:onClick="MedicosHorarios"
+        android:text="Elegir Horario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="269dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="320dp"
+        android:onClick="MedicoServicios"
+        android:text="Consultar Servicios"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="269dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="204dp"
+        android:onClick="MedicoPrevencion"
+        android:text="prevencion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="269dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="264dp"
+        android:onClick="InfoContacto"
+        android:text="contacto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

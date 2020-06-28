@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MedicosHorarios">
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="262dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="28dp"
+        android:hint="               Horario"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="269dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="196dp"
+        android:onClick="altahorario"
+        android:text="Registrar hora"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="269dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="256dp"
+        android:onClick="modificarhora"
+        android:text="Modificar hora"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="269dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="376dp"
+        android:onClick="bajaPorid"
+        android:text="Eliminar hora"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button15"
+        android:layout_width="269dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="316dp"
+        android:onClick="mostrarHorario"
+        android:text="Mostrar Horario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/id"
+        android:layout_width="269dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="76dp"
+        android:ems="10"
+        android:hint="Codigo"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/hora"
+        android:layout_width="269dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="136dp"
+        android:ems="10"
+        android:hint="Hora Disponible"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
