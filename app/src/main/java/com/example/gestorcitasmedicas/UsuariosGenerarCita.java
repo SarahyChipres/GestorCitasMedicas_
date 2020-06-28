@@ -45,9 +45,11 @@ public class UsuariosGenerarCita extends AppCompatActivity {
         con  = new BDOH(getApplicationContext());
 
         comboservicios =(Spinner)findViewById(R.id.comboservicios);
-        /*comboservicios.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        comboservicios.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //Toast.makeText(parent.getContext(),"Hora y fehca seleccionada:"+parent.getItemAtPosition(position).toString(),Toast.LENGTH_LONG).show();
+                fechayhorario.setText("Seleccion:"+parent.getItemAtPosition(position).toString());
 
             }
 
@@ -55,7 +57,7 @@ public class UsuariosGenerarCita extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
-        });*/
+        });
         consultarListaServicios();
         ArrayAdapter<CharSequence> adaptador = new ArrayAdapter(this,android.R.layout.simple_spinner_item,listaServicios);
         comboservicios.setAdapter(adaptador);
@@ -66,29 +68,8 @@ public class UsuariosGenerarCita extends AppCompatActivity {
         ArrayAdapter<CharSequence> adaptadorh= new ArrayAdapter( this, android.R.layout.simple_spinner_item,ListaHorarios);
         combohorarios.setAdapter(adaptadorh);
 
-        combohorarios.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                //Toast.makeText(parent.getContext(),"Hora y fehca seleccionada:"+parent.getItemAtPosition(position).toString(),Toast.LENGTH_LONG).show();
-                fechayhorario.setText("Seleccion:"+parent.getItemAtPosition(position).toString());
-            }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
 
-            }
-        });
-        comboservicios.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                procesoMedico.setText(parent.getItemAtPosition(position).toString());
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
 
     }
 
