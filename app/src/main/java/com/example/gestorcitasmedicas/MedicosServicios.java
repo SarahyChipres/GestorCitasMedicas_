@@ -37,7 +37,7 @@ public class MedicosServicios extends AppCompatActivity {
             Long Res= BD.Tablas.ServiciosTbl.AddService( this, Integer.parseInt(codservicio),nomservicio,preservicio);
 
             if (Res>0){
-                Toast.makeText(MedicosServicios.this,"  servicio dado de Alta correctamente",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MedicosServicios.this,"Servicio dado de Alta correctamente",Toast.LENGTH_SHORT).show();
 
                 codigoservicio.setText("");
                 nombreservicio.setText("");
@@ -49,7 +49,7 @@ public class MedicosServicios extends AppCompatActivity {
 
 
         } else {
-            Toast.makeText(MedicosServicios.this," hay campos vacios", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MedicosServicios.this," Hay campos vacios", Toast.LENGTH_SHORT).show();
 
         }
     }
@@ -112,18 +112,18 @@ public class MedicosServicios extends AppCompatActivity {
         String codservicio= codigoservicio.getText().toString();
         String nomservicio = nombreservicio.getText().toString();
         String preservicio = precioservicio.getText().toString();
-        if(!codservicio.isEmpty()) {
+        if(Comprobarcamposservicios()) {
 
             //Línea de código que nos permite modificar los datos anteriores por los nuevos datos
             int Res = BD.Tablas.ServiciosTbl.ModificarServicio(this, Integer.parseInt(codservicio), preservicio, nomservicio);
 
             if (Res == 1)
-                Toast.makeText(this, "se modificaron los datos", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Se modificaron los datos", Toast.LENGTH_SHORT).show();
             else {
-                Toast.makeText(this, "no existe un artículo con el código ingresado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "No existe un artículo con el código ingresado", Toast.LENGTH_SHORT).show();
             }
         }else {
-            Toast.makeText(this, "Debes introducir el código del servicio", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Hay campos vacios", Toast.LENGTH_SHORT).show();
         }
     }
 

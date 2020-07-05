@@ -35,7 +35,7 @@ public class MedicosHorarios extends AppCompatActivity {
             Long Res = BD.Tablas.HorariosTbl.AddHours(v.getContext(),Integer.getInteger(idh),horah);
 
             if (Res>0){
-                Toast.makeText(v.getContext(),"  hora  dada de Alta correctamente",Toast.LENGTH_SHORT).show();
+                Toast.makeText(v.getContext(),"Hora  dada de Alta correctamente",Toast.LENGTH_SHORT).show();
 
                 id.setText("");
                 hora.setText("");
@@ -46,7 +46,7 @@ public class MedicosHorarios extends AppCompatActivity {
             }
 
         } else {
-            Toast.makeText(v.getContext()," hay campos vacios", Toast.LENGTH_SHORT).show();
+            Toast.makeText(v.getContext()," Hay campos vacios", Toast.LENGTH_SHORT).show();
 
         }
     }
@@ -65,33 +65,47 @@ public class MedicosHorarios extends AppCompatActivity {
 
     public void bajaPorid(View v) {
 
-        String idh;
-        idh= id.getText().toString();
-        Long Res =BD.Tablas.HorariosTbl.DeleteHour(v.getContext(),Integer.getInteger(idh));
-        id.setText("");
-        hora.setText("");
-        if (Res== 1)
-            Toast.makeText(v.getContext(), "Se borró la hora con dicho código",
-                    Toast.LENGTH_SHORT).show();
-        else {
-            Toast.makeText(v.getContext(), "No existe hora con dicho código",
-                    Toast.LENGTH_SHORT).show();
+        if(!id.getText().toString().isEmpty()) {
+            String idh;
+            idh= id.getText().toString();
+            Long Res =BD.Tablas.HorariosTbl.DeleteHour(v.getContext(),Integer.parseInt(idh));
+            id.setText("");
+            hora.setText("");
+
+            if (Res== 1)
+                Toast.makeText(v.getContext(), "Se borró la hora con dicho código",
+                        Toast.LENGTH_SHORT).show();
+            else {
+                Toast.makeText(v.getContext(), "No existe hora con dicho código",
+                        Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(v.getContext()," Incerte el id", Toast.LENGTH_SHORT).show();
         }
+
     }
 
 
     public void modificarhora(View v) {
 
-        String idh, horah;
-        idh = id.getText().toString();
-        horah = hora.getText().toString();
+        if(Comprobarcamposhorario()) {
+            String idh, horah;
+            idh = id.getText().toString();
+            horah = hora.getText().toString();
 
-        Long Res = BD.Tablas.HorariosTbl.ModificarHora(v.getContext(), Integer.getInteger(idh),horah);
+            Long Res = BD.Tablas.HorariosTbl.ModificarHora(v.getContext(), Integer.parseInt(idh), horah);
 
-        if (Res == 1)
-            Toast.makeText(v.getContext(), "se modificaron los datos", Toast.LENGTH_SHORT).show();
-        else{
-            Toast.makeText(v.getContext(), "no existe hora con el código ingresado", Toast.LENGTH_SHORT).show();
+            if (Res == 1) {
+                Toast.makeText(v.getContext(), "Se modificaron los datos", Toast.LENGTH_SHORT).show();
+
+                id.setText("");
+                hora.setText("");
+            }
+            else {
+                Toast.makeText(v.getContext(), "No existe hora con el código ingresado", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(v.getContext()," Hay campos vacios", Toast.LENGTH_SHORT).show();
         }
     }
 

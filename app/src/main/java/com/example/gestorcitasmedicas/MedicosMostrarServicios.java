@@ -31,7 +31,7 @@ public class MedicosMostrarServicios extends AppCompatActivity {
         for (Servicios servicio: servicios
         ) {
             //Empezamos a llenar lista
-            String text = String.format(servicio.getNombreservicio() + " -> "
+            String text = String.format(servicio.getCodigoservicio() + " -> "
                     + servicio.getNombreservicio() + " -> $"
                     + servicio.getPrecioservicio() + System.getProperty ("line.separator"));
             datos.setText(datos.getText() + text);

@@ -20,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        usuario =(TextView)findViewById(R.id.usuario);
+
+        usuario = (TextView)findViewById(R.id.usuario);
         password = (TextView)findViewById(R.id.password);
     }
 

@@ -19,10 +19,13 @@ public class MedicosRegistro extends AppCompatActivity {
         passwordmedico =(TextView)findViewById(R.id.passwordmedico);
         codigomedico =(TextView)findViewById(R.id.codigomedico);
     }
+
     //Metodo para registrar Medico
-    public void altamedico(View v){
+    public void altaMedico(View v){
         //Mando llamar metodo.
-        if(Comprobarcamposmedico()){
+        boolean candado = Comprobarcamposmedico();
+
+        if(candado){
             //Declarar variables para almacenar los datos que  se ingresaran  a la base de datos
 
             String codmedico, usermedico, passmedico;
@@ -30,14 +33,11 @@ public class MedicosRegistro extends AppCompatActivity {
             codmedico = codigomedico.getText().toString();
             usermedico= usuariomedico.getText().toString();
             passmedico= passwordmedico.getText().toString();
+
             Long Res = BD.Tablas.MedicosTbl.AddUser_M(this, Integer.getInteger(codmedico),usermedico,passmedico);
 
             if (Res>0){
                 Toast.makeText(MedicosRegistro.this,"  Dado de Alta correctamente",Toast.LENGTH_SHORT).show();
-
-                codigomedico.setText("");
-                usuariomedico.setText("");
-                passwordmedico.setText("");
 
                 Intent login = new Intent(this, MedicosLogin.class);
                 startActivity(login);
@@ -51,8 +51,10 @@ public class MedicosRegistro extends AppCompatActivity {
 
         }
     }
+
     //Metodo para comprobar que los campos esten llenos
     public boolean Comprobarcamposmedico() {
+        //codigomedico.getText().toString().isEmpty() || usuariomedico.getText().toString().isEmpty() || passwordmedico.getText().toString().isEmpty()
         if (codigomedico.getText().toString().isEmpty() || usuariomedico.getText().toString().isEmpty() || passwordmedico.getText().toString().isEmpty()) {
             //si llega a existir un campo vacio
             return false;

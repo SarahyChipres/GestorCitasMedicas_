@@ -16,12 +16,10 @@ public class MedicosTbl {
 
 
 
-    public static Long AddUser_M(Context context,
-                                 Integer codmedico, String usermedico,String passmedico
-    ) {
-
+    public static Long AddUser_M(Context context, Integer codmedico, String usermedico,String passmedico) {
 
         BDOH adminmedico = new BDOH(context);
+
         //Comprobar si se abrio la conexion
         if(adminmedico != null){
 

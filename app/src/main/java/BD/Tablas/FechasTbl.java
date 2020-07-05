@@ -12,8 +12,7 @@ public class FechasTbl {
     public static final String Campo_Id_F   =  "codigofecha";
     public static final String Campo_Fecha  =  "fechalaboral";
 
-    public static Long AddFechas(Context context,
-                                 Integer codfecha , String fechalab) {
+    public static Long AddFechas(Context context, Integer codfecha , String fechalab) {
 
         BDOH adminfechas = new BDOH(context);
         if (adminfechas!=null){

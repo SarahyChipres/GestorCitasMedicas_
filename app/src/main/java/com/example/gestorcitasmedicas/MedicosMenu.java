@@ -25,14 +25,6 @@ public class MedicosMenu extends AppCompatActivity {
         Intent menu = new Intent(v.getContext(),MedicosCancelarCitas.class);
         startActivity(menu);
     }
-    public void MedicoPrevencion (View v ){
-        Intent  menu = new Intent(v.getContext(), MedicosPrevencion.class);
-        startActivity(menu);
-    }
-    public void   InfoContacto (View v){
-        Intent menu = new  Intent(v.getContext(), MedicosInformacionContacto.class);
-        startActivity(menu);
-    }
     public  void MedicoServicios(View v){
         Intent menu = new Intent(v.getContext(),MedicosServicios.class);
         startActivity(menu);

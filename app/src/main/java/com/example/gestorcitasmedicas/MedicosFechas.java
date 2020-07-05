@@ -33,21 +33,20 @@ public class MedicosFechas extends AppCompatActivity {
             Long Res = BD.Tablas.FechasTbl.AddFechas(v.getContext(),Integer.getInteger(codfecha),fechalab);
 
             if (Res>0){
-                Toast.makeText(v.getContext(),"  hora  dada de Alta correctamente",Toast.LENGTH_SHORT).show();
+                Toast.makeText(v.getContext(),"Fecha dada de Alta correctamente",Toast.LENGTH_SHORT).show();
 
                 codigofecha.setText("");
                 fechalaboral.setText("");
-
 
             } else {
                 Toast.makeText(v.getContext(),"No fue posible dar de alta esta hora",Toast.LENGTH_SHORT).show();
             }
 
         } else {
-            Toast.makeText(v.getContext()," hay campos vacios", Toast.LENGTH_SHORT).show();
-
+            Toast.makeText(v.getContext(),"Hay campos vacios", Toast.LENGTH_SHORT).show();
         }
     }
+
     //Metodo para comprobar que los campos esten llenos
     public boolean ComprobarcamposhorarioF() {
         if (codigofecha.getText().toString().isEmpty() || fechalaboral.getText().toString().isEmpty() ) {
@@ -63,34 +62,54 @@ public class MedicosFechas extends AppCompatActivity {
 
     public void bajaPoridFecha(View v) {
 
-        String codfecha;
-        codfecha= codigofecha.getText().toString();
-        Long Res =BD.Tablas.FechasTbl.DeleteFecha(v.getContext(),Integer.getInteger(codfecha));
-        codigofecha.setText("");
-        fechalaboral.setText("");
-        if (Res== 1)
-            Toast.makeText(v.getContext(), "Se borró la hora con dicho código",
-                    Toast.LENGTH_SHORT).show();
-        else {
-            Toast.makeText(v.getContext(), "No existe hora con dicho código",
-                    Toast.LENGTH_SHORT).show();
+        if(!codigofecha.getText().toString().isEmpty()){
+
+            String codfecha;
+            codfecha= codigofecha.getText().toString();
+            Long Res =BD.Tablas.FechasTbl.DeleteFecha(v.getContext(),Integer.parseInt(codfecha));
+            codigofecha.setText("");
+            fechalaboral.setText("");
+            if (Res== 1){
+                Toast.makeText(v.getContext(), "Se borró la fecha con dicho código",
+                        Toast.LENGTH_SHORT).show();
+                codigofecha.setText("");
+            }
+            else {
+                Toast.makeText(v.getContext(), "No existe fecha con dicho código",
+                        Toast.LENGTH_SHORT).show();
+            }
+
+        } else {
+            Toast.makeText(v.getContext(),"Inserte el codigo de la fecha", Toast.LENGTH_SHORT).show();
         }
+
     }
 
 
     public void modificarFecha(View v) {
 
-        String codfecha, fechalab;
-        codfecha= codigofecha.getText().toString();
-        fechalab = fechalaboral.getText().toString();
+        if(ComprobarcamposhorarioF()){
 
-        Long Res = BD.Tablas.FechasTbl.ModificarFecha(v.getContext(), Integer.getInteger(codfecha),fechalab);
+            String codfecha, fechalab;
+            codfecha= codigofecha.getText().toString();
+            fechalab = fechalaboral.getText().toString();
 
-        if (Res == 1)
-            Toast.makeText(v.getContext(), "se modificaron los datos", Toast.LENGTH_SHORT).show();
-        else{
-            Toast.makeText(v.getContext(), "no existe hora con el código ingresado", Toast.LENGTH_SHORT).show();
+            Long Res = BD.Tablas.FechasTbl.ModificarFecha(v.getContext(), Integer.parseInt(codfecha),fechalab);
+
+            if (Res == 1) {
+                Toast.makeText(v.getContext(), "Se modificaron los datos", Toast.LENGTH_SHORT).show();
+
+                codigofecha.setText("");
+                fechalaboral.setText("");
+            }
+            else{
+                Toast.makeText(v.getContext(), "No existe fecha con el código ingresado", Toast.LENGTH_SHORT).show();
+            }
+
+        } else {
+            Toast.makeText(v.getContext(),"Hay campos vacios", Toast.LENGTH_SHORT).show();
         }
+
     }
 
 

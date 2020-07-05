@@ -11,6 +11,12 @@ public class Medicos{
 
     }
 
+    public Medicos() {
+        codigomedico = "";
+        usermedico = "";
+        passwordmedico = "";
+    }
+
     public String getCodigomedico() {
         return codigomedico;
     }
