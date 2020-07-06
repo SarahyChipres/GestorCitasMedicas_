@@ -60,16 +60,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <Spinner
         android:id="@+id/comboMedico"
         android:layout_width="269dp"
         android:layout_height="40dp"
         android:layout_marginTop="360dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/textView3"

@@ -6,4 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".UsuariosConsultarCita">
 
+    <ScrollView
+        android:id="@+id/scrollViewfecha"
+        android:layout_width="323dp"
+        android:layout_height="463dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:scrollbarSize="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.543">
+
+        <TextView
+            android:id="@+id/datosCitas"
+            android:layout_width="320dp"
+            android:layout_height="557dp"
+            android:textSize="12sp"
+            tools:layout_editor_absoluteX="33dp"
+            tools:layout_editor_absoluteY="87dp" />
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="77dp"
+        android:layout_height="38dp"
+        android:text="Citas"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.093" />
 </androidx.constraintlayout.widget.ConstraintLayout>

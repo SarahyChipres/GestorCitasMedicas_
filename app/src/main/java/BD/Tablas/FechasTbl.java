@@ -29,10 +29,7 @@ public class FechasTbl {
         } else{
             return Long.getLong("0");
         }
-
-
     }
-
 
     public static Long DeleteFecha(Context context, Integer idf ) {
         BDOH adminfechas = new BDOH(context);

@@ -8,12 +8,13 @@ import BD.BDOH;
 
 public class FichasTbl {
     public static final String TableNameFichas   =  "Fichas";
-    public static final String QueryCreateFichas =  "CREATE TABLE Fichas (idficha INTEGER PRIMARY KEY, FOREIGN KEY(idMedico) REFERENCES Medicos(codigomedico), paciente TEXT, proceso TEXT, horario TEXT,)";
+    public static final String QueryCreateFichas =  "CREATE TABLE Fichas (idficha INTEGER PRIMARY KEY, idMedico INTEGER, paciente TEXT, proceso TEXT, horario TEXT, userId INTEGER)";
     public static final String Campo_Id_Ficha  =  "idficha";
     public static final String Campo_Id_Medico  =  "idMedico";
     public static final String Campo_Paciente  =  "paciente";
     public static final String Campo_Proceso  =  "proceso";
     public static final String Campo_Horario  =  "horario";
+    public static final String Campo_userId  =  "userId";
 
     public static Long addFicha(Context context, Integer codFicah , Integer idMedico, String paciente, String proceso, String horario) {
 
@@ -29,13 +30,15 @@ public class FichasTbl {
             con.put(Campo_Paciente, paciente);
             con.put(Campo_Proceso, proceso);
             con.put(Campo_Horario, horario);
+            con.put(Campo_userId, UsuariosTbl.getUser(context));
 
             long insertarFichas=db.insert(TableNameFichas, null, con);
             db.close();
             return  insertarFichas;
-
         } else{
             return Long.getLong("0");
         }
+
+
     }
 }

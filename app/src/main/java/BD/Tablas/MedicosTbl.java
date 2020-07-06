@@ -2,6 +2,7 @@ package BD.Tablas;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import BD.BDOH;
@@ -35,6 +36,27 @@ public class MedicosTbl {
             return insertadomedico;
         }else{
             return Long.getLong("0");
+        }
+    }
+
+    public static String getUserMedico(Context context, Integer idMedico) {
+        //Conexion a la base de datos
+        BDOH usuarioMedico =new BDOH(context);
+        //Comprobar conexion
+        if (usuarioMedico!=null){
+            //Obtenemos instancia para poder ver la base de datos
+            SQLiteDatabase db =usuarioMedico.getReadableDatabase();
+            //Hacemos la consulta y recorremos todos los datos
+            Cursor c = db.rawQuery("SELECT " + Campo_User_M +
+                    " FROM Medicos WHERE codigomedico =  " + idMedico,null);
+            //Comprobar si existen datos en la tabla
+            if (c.moveToFirst()){
+                return c.getString(0);
+            } else {
+                return "-1";
+            }
+        } else {
+            return "0";
         }
     }
 }

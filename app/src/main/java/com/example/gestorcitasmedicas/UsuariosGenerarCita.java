@@ -176,13 +176,13 @@ public class UsuariosGenerarCita extends AppCompatActivity {
             String paciente = nombrePaciente.getText().toString();
             String nombre = datosDoctro[1], id = datosDoctro[0];
 
-            Long Res = BD.Tablas.FichasTbl.addFicha(this, (int) (Math.random()*100+1), Integer.parseInt(id), paciente, itemServicio, itemHora);
+            Long Res = BD.Tablas.FichasTbl.addFicha(this, (int) (Math.random()*1000+1), Integer.parseInt(id), paciente, itemServicio, itemHora);
 
             if (Res>0){
                 Toast.makeText(v.getContext(),"Cita agendada correctamente",Toast.LENGTH_SHORT).show();
 
-                /*Intent menu = new Intent(this, UsuariosConsultarCita.class);
-                startActivity(menu);*/
+                Intent menu = new Intent(this, UsuariosConsultarCita.class);
+                startActivity(menu);
 
             } else {
                 Toast.makeText(v.getContext(),"No fue posible agendar",Toast.LENGTH_SHORT).show();

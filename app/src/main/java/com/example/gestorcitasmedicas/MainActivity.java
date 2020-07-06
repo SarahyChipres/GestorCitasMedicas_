@@ -12,6 +12,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import BD.BDOH;
+import BD.Tablas.UsuariosTbl;
+import BD.Usuarios;
 
 public class MainActivity extends AppCompatActivity {
     public TextView usuario, password;
@@ -42,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
             if (fila.moveToFirst()) {
                 //logeado correctamente
                 if (fila.getString(1).equals(pass)){
+                    //cerrar sesiones abiertas y conectar sesion actual
+                    UsuariosTbl.setUser(this, user);
                     Intent menu = new Intent(this, UsuariosMenu.class);
                     menu.putExtra("codigo", fila.getInt(0));
                     startActivity(menu);
